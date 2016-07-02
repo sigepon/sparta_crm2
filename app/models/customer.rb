@@ -1,9 +1,9 @@
 class Customer < ActiveRecord::Base
     def full_name
-        full_name = family_name + given_name
-        full_name
+        # full_name = family_name + given_name
+        # full_name
+        family_name + given_name
     end
-
 
     validates :family_name,
     presence: true, length: { maximum: 20 }

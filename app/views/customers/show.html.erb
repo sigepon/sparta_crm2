@@ -7,5 +7,9 @@
       <dt>電子メール</dt>
       <dd style="margin:0px 0px 10px 20px"><%= @customer.email %></dd>
     </dl>
+
+    <%= link_to '編集', edit_customer_path(@customer), class: "btn btn-default" %>
+    <%= link_to '戻る', customers_path(@customer), class: "btn btn-default" %>
+
   </div>
 </div>
