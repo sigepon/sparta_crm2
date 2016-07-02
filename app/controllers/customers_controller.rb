@@ -1,26 +1,27 @@
 class CustomersController < ApplicationController
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+
   def index
+    @customers = Customer.all
   end
 
   def new
-    @custmoer = Custmer.new
+    @customer = Customer.new
   end
 
   def create
-    @custmoer = Customer.new(custmoer_params)
-    if @custmoer.save
-      redirect_to @custmoer
+    @customer = Customer.new(custmoer_params)
+    if @customersave
+      redirect_to @customer
     else
       render :new
     end
   end
 
   def edit
-    @custmoer = Customer.find(params[:id])
   end
 
   def update
-    @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
       redirect_to @customer
     else
@@ -29,11 +30,9 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @custmoer = Customer.faind(params[:id])
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
     @customer.destroy
     redirect_to customer_url
   end
@@ -45,8 +44,11 @@ class CustomersController < ApplicationController
       :family_name,
       :given_name,
       :email
-    )
+      )
+  end
 
+  def set_customer
+    @customer = Customer.find(params[:id])
   end
 end
 
