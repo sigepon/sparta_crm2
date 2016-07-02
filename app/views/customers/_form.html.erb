@@ -24,5 +24,10 @@
     <%= f.label :email %><br>
     <%= f.text_field :email, class: "form-control" %>
   </div>
+    <%= f.label :company_id %>
+    <%= f.collection_select :company_id, Company.all, :id, :name, { include_blank: "会社を選択してください" },  { class: "form-control" }  %>
+  <div>
+
+  </div>
   <%= f.submit class: "btn btn-default" %>
 <% end %>

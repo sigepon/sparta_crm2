@@ -1,4 +1,7 @@
 class Customer < ActiveRecord::Base
+
+    belongs_to :company
+
     def full_name
         # full_name = family_name + given_name
         # full_name
@@ -11,5 +14,6 @@ class Customer < ActiveRecord::Base
     presence: true, length: { maximum: 20 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email,
-    presence: true, format: { with: VALID_EMAIL_REGEX }
+    presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+    validates :company_id, presence: true
 end
