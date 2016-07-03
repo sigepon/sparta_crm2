@@ -27,6 +27,17 @@ Post.create(position_name: "部長")
 Post.create(position_name: "課長")
 Post.create(position_name: "平社員")
 
+User.create(family_name: "八幡平", given_name: "太郎", email: "hachiman@taro.com", password: "hachimantaro", image_url: "http://www.hachimantaishi.com/shokokai/taira/gallery/gallery/63.jpg")
+User.create(family_name: "安比", given_name: "花子", email: "appi@hanako.com", password: "appihanako", image_url: "http://www.appi.co.jp/wp/wp-content/uploads/2014/04/gr_top_03.jpg")
+User.create(family_name: "厚切り", given_name: "ダンソン", email: "atsugiri@danson.com", password: "atsugiridanson", image_url: "http://www.appi.co.jp/wp/wp-content/uploads/2014/04/icecream.jpg")
+
+300.times do |comment|
+  Comment.create(body: "#{comment}回目のコメントです。",
+                 customer_id: rand(100) + 1,
+                 user_id: rand(3) + 1)
+end
+
+
 100.times do |index|
   Customer.create(
     family_name: Faker::Japanese::Name.last_name,
@@ -36,4 +47,5 @@ Post.create(position_name: "平社員")
     post_id: rand(4) + 1
   )
 end
+
 

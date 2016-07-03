@@ -10,7 +10,9 @@ protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :family_name
     devise_parameter_sanitizer.for(:sign_up) << :given_name
+    devise_parameter_sanitizer.for(:sign_up) << :image_url
     devise_parameter_sanitizer.for(:account_update) << :family_name
     devise_parameter_sanitizer.for(:account_update) << :given_name
+    devise_parameter_sanitizer.for(:account_update) << :image_url
   end
 end
