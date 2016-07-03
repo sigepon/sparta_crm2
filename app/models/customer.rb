@@ -2,6 +2,7 @@ class Customer < ActiveRecord::Base
 
     belongs_to :company
     belongs_to :post
+    has_many :comments
 
     def full_name
         # full_name = family_name + given_name

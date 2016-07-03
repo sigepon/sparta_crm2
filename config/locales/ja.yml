@@ -1,6 +1,21 @@
 ---
 ja:
   activerecord:
+    models:
+      customer: "顧客"
+      post: "役職"
+      company: "会社"
+    attributes:
+      customer:
+        family_name: "姓"
+        given_name: "名"
+        email: "メールアドレス"
+        company_id: "会社名"
+        post_id: "役職"
+      post:
+        position_name: "役職名"
+      company:
+        name: "会社"
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
